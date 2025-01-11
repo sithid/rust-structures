@@ -20,7 +20,26 @@ fn main() {
         is_student: false,
     };
 
+    let mut person2 = Person {
+        name: String::from("Jim"),
+        age: 38,
+        is_student: true,
+    };
+
     println!("Person1| {:?}", person1 );
     println!("Person1| Name: {}, Age: {}, Is Student: {}", person1.name, person1.age, person1.is_student );
-    println!("");    
+    
+    println!("");
+
+    println!("Person2| {:?}", person2 );
+    println!("Person2| Name: {}, Age: {}, Is Student: {}", person2.name, person2.age, person2.is_student );
+
+    println!("");
+    println!("Person2 says: don't call me Jim, call me Jimmy!");
+    println!("");
+
+    person2.name.push_str("my");
+
+    println!("Person2| {:?}", person2 );
+    println!("Person2| Name: {}, Age: {}, Is Student: {}", person2.name, person2.age, person2.is_student );
 }
