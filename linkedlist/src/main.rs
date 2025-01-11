@@ -4,7 +4,7 @@
  * Box<..> is a smart pointer for data allocation on the heap.  Because Node is recursive ( reference to a Node struct: head).
  */
 
- #[derive(Debug)]
+ #[derive(Debug, Clone)]
  struct Node {
      data: i32,
      next: Option<Box<Node>>, // Option<> for Some(value) or None, Box<> for a smart pointer.
@@ -45,9 +45,26 @@
 
     println!("*   println!(\"LinkedList.head = {{:?}}\" -> LinkedList.head = {:?}           *", list.head);
 
-    let mut n = list.head.unwrap();
+    let n = list.head.unwrap();
 
     println!("*   list.head: Data: {}, Next: {:?}                                                                      *", n.data, n.next );
     println!("************************************************EXAMPLES**************************************************\n\r");
  }
+
+ #[cfg(test)]
+ mod tests {
+    use super::*;
+
+    #[test]
+    fn test_insert_at_head() {
+        let mut test_list: LinkedList = LinkedList::new();
+        let x: i32 = 10;
+
+        test_list.insert_at_head(x);
+
+        let data: i32 = test_list.head.clone().unwrap().data;
+
+        assert_eq!( data, x );
+    }
+}
  
