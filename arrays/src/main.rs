@@ -1,7 +1,7 @@
 fn main() {
     let fruits: [&str; 5] = ["apple", "banana", "orange", "pear", "mango"];
     let str_slice= &fruits[0..3];
-    let mut string_fruit = String::from("");
+    let mut string_fruit = String::new();
 
     for fruit in fruits{
         string_fruit.push_str(" ");
@@ -20,7 +20,6 @@ fn main() {
     println!("string array: let fruits: [&str, 5] = [{:?}]", fruits);
     println!("slice of fruits: let str_slice= &fruits[0..3] = {:?}", str_slice);
     println!("string from &str array: string_fruit = {}, ", string_fruit);
-    
     println!("\n\rlet mut numbers; [i32; 10] = [0;10]");
 
     let numbers: [i32; 16] = [1; 16];
