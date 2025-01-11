@@ -20,7 +20,7 @@ fn main() {
     println!("string array: let fruits: [&str, 5] = [{:?}]", fruits);
     println!("slice of fruits: let str_slice= &fruits[0..3] = {:?}", str_slice);
     println!("string from &str array: string_fruit = {}, ", string_fruit);
-    println!("\n\rlet mut numbers; [i32; 10] = [0;10]");
+    println!("\n\rlet mut numbers; [i32; 10] = [0;10]\n\r");
 
     let numbers: [i32; 16] = [1; 16];
 
