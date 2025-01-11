@@ -48,7 +48,7 @@
     let n = list.head.unwrap();
 
     println!("*   list.head: Data: {}, Next: {:?}                                                                      *", n.data, n.next );
-    println!("************************************************EXAMPLES**************************************************\n\r");
+    println!("************************************************EXAMPLES**************************************************\n\r");    
  }
 
  #[cfg(test)]
@@ -56,7 +56,7 @@
     use super::*;
 
     #[test]
-    fn test_insert_at_head() {
+    fn test_insert_at_head1() {
         let mut test_list: LinkedList = LinkedList::new();
         let x: i32 = 10;
 
@@ -64,7 +64,21 @@
 
         let data: i32 = test_list.head.clone().unwrap().data;
 
-        assert_eq!( data, x );
+        assert_eq!( data, 10 );
+    }
+
+    #[test]
+    fn test_insert_at_head2() {
+        let mut test_list: LinkedList = LinkedList::new();
+        let x: i32 = 10;
+
+        test_list.insert_at_head(x << 1);
+        test_list.insert_at_head(x << 2);
+        test_list.insert_at_head(x << 3);
+
+        let node: Node = *test_list.head.clone().unwrap();
+
+        assert_eq!( node.data, 80 );
     }
 }
  
