@@ -1,7 +1,7 @@
 /*
  * Linked List:  I will actually be moving this code to its own little project.
  * Option<..> can be used for Some(value) or None (like in the event the node does not have a next because it is the last node in the list).
- * Box<..> is a smart pointer for data allocation on the heap.  Because Node is recursive ( reference to a Node struct: head)
+ * Box<..> is a smart pointer for data allocation on the heap.  Because Node is recursive ( reference to a Node struct: head).
  */
 
  #[derive(Debug)]
@@ -17,7 +17,7 @@
  }
  
  impl LinkedList {
-     fn new() -> Self {
+     fn new() -> Self {             // LinkedList Constructor: Self refers to the type were implementing, LinkedList.
          LinkedList { head: None }
      }
  
@@ -32,10 +32,22 @@
  }
  
  fn main() {
-     println!("**********************************************Linked List*************************************************");
-     println!("* Welcome to Rust Linked List!                                                                           *");
-     println!("* Linked List:                                                                                                *");
-     println!("************************************************EXAMPLES**************************************************\n\r");
- 
+    println!("**********************************************Linked List*************************************************");
+    println!("* Welcome to Rust Linked List!                                                                           *");
+    println!("* Linked List:                                                                                           *");
+    println!("************************************************EXAMPLES**************************************************");
+    println!("* Linked List:                                                                                           *");
+    println!("*   let mut list: LinkedList = LinkedList::new()                                                         *");
+    println!("*   list.insert_at_head( 10 )                                                                            *");
+
+    let mut list: LinkedList = LinkedList::new();
+    list.insert_at_head( 10 );
+
+    println!("*   println!(\"LinkedList.head = {{:?}}\" -> LinkedList.head = {:?}           *", list.head);
+
+    let mut n = list.head.unwrap();
+
+    println!("*   list.head: Data: {}, Next: {:?}                                                                      *", n.data, n.next );
+    println!("************************************************EXAMPLES**************************************************\n\r");
  }
  
