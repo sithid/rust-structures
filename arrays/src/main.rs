@@ -8,6 +8,8 @@ fn main() {
         string_fruit.push_str(fruit);
     }
 
+    string_fruit = String::from(string_fruit.trim_start());
+
     println!("\n\r**************************************************ARRAYS**************************************************");
     println!("* Welcome to Rust Arrays!                                                                                *");
     println!("* Array: A contiguous block of memory that holds a fixed number of elements of the same data type.       *");
@@ -17,9 +19,9 @@ fn main() {
     println!("*************************************************EXAMPLES*************************************************\n\r");
     println!("string array: let fruits: [&str, 5] = [{:?}]", fruits);
     println!("slice of fruits: let str_slice= &fruits[0..3] = {:?}", str_slice);
-    println!("string from &str array: string_fruit {}, ", string_fruit);
-    println!("int array: before exponential shift");
-    println!("let mut numbers; [i32; 10] = [0;10]\n\r");
+    println!("string from &str array: string_fruit = {}, ", string_fruit);
+    
+    println!("\n\rlet mut numbers; [i32; 10] = [0;10]");
 
     let numbers: [i32; 16] = [1; 16];
 
